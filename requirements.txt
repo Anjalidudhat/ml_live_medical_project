@@ -1,7 +1,5 @@
-Flask>=2.3.0
-numpy>=1.24.0
-pandas>=2.0.0
-scikit-learn>=1.0.0
-xgboost>=1.7.0
-streamlit
-rich>=10.14.0
+Flask
+numpy
+pandas
+scikit-learn
+xgboost
