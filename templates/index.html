@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Thyroid Disease Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: inline-block;
+            width: 200px;
+            margin-bottom: 5px;
+        }
+        input {
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 200px;
+        }
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Thyroid Disease Prediction</h2>
+        <form action="{{ url_for('predict')}}" method="post">
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="number" name="age" required>
+            </div>
+            <div class="form-group">
+                <label>Sex (0-F, 1-M):</label>
+                <input type="number" name="sex" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>On Thyroxine (0/1):</label>
+                <input type="number" name="on_thyroxine" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Query on Thyroxine (0/1):</label>
+                <input type="number" name="query_on_thyroxine" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>On Antithyroid Medication (0/1):</label>
+                <input type="number" name="on_antithyroid_medication" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Sick (0/1):</label>
+                <input type="number" name="sick" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Pregnant (0/1):</label>
+                <input type="number" name="pregnant" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Thyroid Surgery (0/1):</label>
+                <input type="number" name="thyroid_surgery" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>I131 Treatment (0/1):</label>
+                <input type="number" name="I131_treatment" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Query Hypothyroid (0/1):</label>
+                <input type="number" name="query_hypothyroid" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Query Hyperthyroid (0/1):</label>
+                <input type="number" name="query_hyperthyroid" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Lithium (0/1):</label>
+                <input type="number" name="lithium" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Goitre (0/1):</label>
+                <input type="number" name="goitre" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Tumor (0/1):</label>
+                <input type="number" name="tumor" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Hypopituitary (0/1):</label>
+                <input type="number" name="hypopituitary" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>Psych (0/1):</label>
+                <input type="number" name="psych" min="0" max="1" required>
+            </div>
+            <div class="form-group">
+                <label>TSH:</label>
+                <input type="number" name="TSH" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>T3:</label>
+                <input type="number" name="T3" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>TT4:</label>
+                <input type="number" name="TT4" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>T4U:</label>
+                <input type="number" name="T4U" step="0.01" required>
+            </div>
+            <div class="form-group">
+                <label>FTI:</label>
+                <input type="number" name="FTI" step="0.01" required>
+            </div>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+    </div>
+</body>
+</html>
